@@ -1,4 +1,7 @@
 <!DOCTYPE html> 
+
+
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,19 +14,23 @@
 
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>APP FIGURAS GEOMETRICAS CARLOS</h1>
+		<h1>APP FIGURAS <br>GEOMETRICAS CARLOS</h1>
 	</div>
 	<div data-role="content">	
 		<ul data-role="listview">
 			<li><a href="#page2">CUADRADO</a></li>
             <li><a href="#page3">TRIANGULO</a></li>
+            <li><a href="#page4">CIRCULO</a></li>
 			
 		</ul>		
 	</div>
 	<div data-role="footer">
-		<h4>AREA-PERIMETRO-</h4>
+		<h4>AREA-PERIMETRO DEL CUADRADO-<br>CIRCULO Y TRIANGULO</h4>
 	</div>
-</div>
+    <h5>   ESTA ES UNA APP HECHA POR <br> CARLOS ELIAS RODRIGUEZ<br>ING DE SISTEMAS</h5>
+    
+<img src="imagen.jpg" width="380" height="200"> </div>
+
 
 <div data-role="page" id="page2">
 	<div data-role="header">
@@ -31,7 +38,7 @@
 	</div>
 	<div data-role="content">	
 		<form name="cuadrado">
-<label>Primer Numero:</label><br>
+<label>digite el lado por favor:</label><br>
 <input type="text" name="lado" size="10" maxlength="10"><br>
 
 <input type="button" name="area" value="area" onClick="operacionarea()">
@@ -45,7 +52,7 @@
 		
 	</div>
 	<div data-role="footer">
-		<h4>Pie de página</h4>
+		<h4>AREA-PERIMETRO DEL CUADRADO</h4>
 	</div>
 </div>
 
@@ -57,15 +64,15 @@
 	</div>
 	<div data-role="content">	
 		<form name="triangulo">
-<label>lado1:</label><br>
+<label>ingrese el lado1:</label><br>
 <input type="text" name="lado1" size="10" maxlength="10"><br>
-<label>lado2o:</label><br>
+<label>ingrese el lado2:</label><br>
 <input type="text" name="lado2" size="10" maxlength="10"><br>
-<label>lado3:</label><br>
+<label>ingrese el lado3:</label><br>
 <input type="text" name="lado3" size="10" maxlength="10"><br>
-<label>base:</label><br>
+<label>ingrese la base:</label><br>
 <input type="text" name="base" size="10" maxlength="10"><br>
-<label>altura:</label><br>
+<label>ingrese la altura:</label><br>
 <input type="text" name="altura" size="10" maxlength="10"><br>
 
 <input type="button" name="area" value="area" onClick="areatriangulo()">
@@ -79,12 +86,65 @@
 		
 	</div>
 	<div data-role="footer">
-		<h4>Pie de página</h4>
+		<h4>AREA-PERIMETRO DEL TRIANGULO</h4>
 	</div>
 </div>
 
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<h1>CIRCULO</h1>
+	</div>
+	<div data-role="content">	
+		<form name="circulo">
+<label>ingrese  el radio:</label><br>
+<input type="text" name="radio" size="10" maxlength="10"><br>
+
+<input type="button" name="area" value="area" onClick="areacirculo()">
+<input type="button" name="perimetro"value="perimetro" onClick="perimetrocirculo()">
+
+
+<br><br>
+<label>Resultado2:</label><br>
+<input type="Text" name="resultado2" size="12">
+</form>
+		
+	</div>
+	<div data-role="footer">
+		<h4>AREA-PERIMETRO DEL CIRCULO</h4>
+	</div>
+</div>
+
+
+
 </body>
 </html>
+
+<script>
+function areacirculo(){
+	var radio = document.circulo.radio.value;
+	
+var result = (3.1416 * (radio * radio));
+
+document.circulo.resultado2.value = result;
+
+
+
+}
+</script>
+<script>
+function perimetrocirculo(){
+	
+	var radio = document.circulo.radio.value;
+	
+var result = 2 * 3.1416 * radio;
+
+document.circulo.resultado2.value = result;
+
+
+
+}
+
+</script>
 
 <script>
 function operacionarea(){
@@ -110,6 +170,7 @@ document.cuadrado.resultado.value = result;
 
 }
 </script>
+
 <script>
 function perimetrotriangulo(){
 	var lado1 = document.triangulo.lado1.value;
